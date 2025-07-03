@@ -6,7 +6,7 @@
 #    By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/11 17:06:56 by adpinhei          #+#    #+#              #
-#    Updated: 2025/07/01 20:30:18 by adpinhei         ###   ########.fr        #
+#    Updated: 2025/07/03 18:59:45 by adpinhei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,11 +29,12 @@ PARSING_SRCS := parsing/ft_rank.c parsing/ft_atol.c
 CHECKER_SRCS := checkers/ft_repetition.c checkers/ft_printlst.c \
 				checkers/ft_isdone.c checkers/ft_mid.c
 
-ERROR_SRCS := error/ft_clearlst.c
+ERROR_SRCS := error/ft_clearlst.c error/ft_error.c
 
 OPERATIONS_SRCS := operations/ft_sort.c operations/ft_move_a.c \
 				operations/ft_rot.c operations/ft_revrot.c \
 				operations/ft_push.c operations/ft_move_b.c \
+				operations/ft_clean_b.c
 
 OUTPUT_SRCS := output/ft_putstr.c
 

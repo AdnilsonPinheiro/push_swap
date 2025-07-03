@@ -1,34 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdone.c                                        :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/01 19:32:24 by adpinhei          #+#    #+#             */
-/*   Updated: 2025/07/03 19:22:17 by adpinhei         ###   ########.fr       */
+/*   Created: 2025/07/03 15:18:37 by adpinhei          #+#    #+#             */
+/*   Updated: 2025/07/03 15:31:43 by adpinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_isdone(t_list **master, t_list **serv)
+void	ft_error(void)
 {
-	t_list	*current;
-
-	if (ft_lstsize(serv) > 0)
-		return ;
-	current = *master;
-	while (current->next != NULL)
-	{
-		if (current->num < current->next->num)
-			current = current->next;
-		else
-			return ;
-	}
-	ft_clearlst(serv);
-	ft_putstr(1, "stack_a is ordered!\n");
-	ft_printlst(master, "stack_a");
-	ft_clearlst(master);
+	ft_putstr(2, "Error");
 	exit (0);
 }

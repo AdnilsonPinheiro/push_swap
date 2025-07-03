@@ -6,7 +6,7 @@
 /*   By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 17:57:52 by adpinhei          #+#    #+#             */
-/*   Updated: 2025/07/01 21:33:03 by adpinhei         ###   ########.fr       */
+/*   Updated: 2025/07/03 18:01:04 by adpinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,20 @@ void	ft_push(t_list **src, t_list **dest)
 {
 	t_list	*node;
 
-	if (!src || !*src || (*src)->next == NULL)
+	if (!src || !*src)
 		return ;
 	node = *src;
 	if (!*dest)
 	{
 		*dest = node;
-		(*dest)->next = NULL;
-		(*dest)->prev = NULL;
-		if ((*src)->next)
-			(*src)->next->prev = NULL;
 		*src = (*src)->next;
+		(*dest)->next = NULL;
+		(*dest)->prev = NULL;		
 	}
 	else
 	{
+		*src = (*src)->next;
+		(*src)->prev = NULL;
 		node->next = *dest;
 		(*dest)->prev = node;
 		node->prev = NULL;

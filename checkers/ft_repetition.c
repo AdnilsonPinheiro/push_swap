@@ -6,7 +6,7 @@
 /*   By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 16:18:31 by adpinhei          #+#    #+#             */
-/*   Updated: 2025/07/01 16:37:21 by adpinhei         ###   ########.fr       */
+/*   Updated: 2025/07/03 15:30:15 by adpinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,21 @@ void	ft_repetition(t_list **lst)
 	t_list		*first;
 	t_list		*second;
 	int long	i;
+	int			counter;
 
 	first = *lst;
-	while (first->next != NULL)
+	counter = 0;
+	while (counter < ft_lstsize(lst))
 	{
 		i = first->num;
 		second = first->next;
-		while (second->next != NULL)
+		while (second)
 		{
 			if (second->num == i)
-			{
-				ft_putstr(2, "repetition");
-				exit (0);
-			}
+				ft_error();
 			second = second->next;
 		}
 		first = first->next;
+		counter++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 17:13:27 by adpinhei          #+#    #+#             */
-/*   Updated: 2025/07/01 20:32:37 by adpinhei         ###   ########.fr       */
+/*   Updated: 2025/07/03 15:16:39 by adpinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,12 @@ void	ft_printlst(t_list **lst, char *name)
 
 	if (!lst || !*lst)
 	{
+		printf("%s\n", name);
 		ft_putstr(1, "stack is empty\n");
 		return;
 	}
 	current = *lst;
-	printf("%s\n", name);
+	printf("%s ", name);
 	// while (current->next != NULL)
 	// {
 	// 	printf("%li ", current->num);

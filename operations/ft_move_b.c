@@ -6,7 +6,7 @@
 /*   By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 18:24:22 by adpinhei          #+#    #+#             */
-/*   Updated: 2025/07/01 20:41:53 by adpinhei         ###   ########.fr       */
+/*   Updated: 2025/07/03 18:32:58 by adpinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,27 @@ void	ft_move_b(t_list **src, t_list **dest, int bit)
 		return ;
 	while (ft_one(src, bit))
 	{
-		if (((*src)->num >> (bit + 1) & 1) == 1)
+		if (((*src)->rank >> (bit + 1) & 1) == 1)
 			ft_push(src, dest);
 		else
 			ft_fix_b(src, bit);
 	}
+	// ft_putstr(1, "move_b\n");
 }
 
 static int	ft_one(t_list **lst, int bit)
 {
 	t_list	*current;
+	int		counter;
 
+	counter = 0;
 	current = *lst;
-	while (current->next != NULL)
+	while (counter < ft_lstsize(lst))
 	{
-		if ((current->num >> (bit - 1) & 1) == 1)
+		if ((current->rank >> (bit + 1) & 1) == 1)
 			return (1);
 		current = current->next;
+		counter++;
 	}
 	return (0);
 }
@@ -47,16 +51,19 @@ static void	ft_fix_b(t_list **lst, int bit)
 	t_list	*current;
 	int		one;
 	int		mid;
+	int		counter;
 
 	one = 0;
+	counter = 0;
 	mid = ft_mid(lst);
 	current = *lst;
-	while ((current->num >> (bit - 1) & 1) == 0)
+	while (((current->rank >> (bit + 1) & 1) == 0) && counter < ft_lstsize(lst))
 	{
 		one++;
 		current = current->next;
+		counter++;
 	}
-	if (one < mid)
+	if (one <= mid)
 		ft_rot(lst);
 	else
 		ft_revrot(lst);

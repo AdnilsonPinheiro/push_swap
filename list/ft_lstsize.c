@@ -6,7 +6,7 @@
 /*   By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 15:55:24 by adpinhei          #+#    #+#             */
-/*   Updated: 2025/07/01 20:57:03 by adpinhei         ###   ########.fr       */
+/*   Updated: 2025/07/03 15:35:28 by adpinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ int	ft_lstsize(t_list **lst)
 		current = current->next;
 		size++;
 	}
-	return (size);
+	return (++size);
 }

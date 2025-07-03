@@ -6,7 +6,7 @@
 /*   By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 15:52:45 by adpinhei          #+#    #+#             */
-/*   Updated: 2025/07/01 21:24:39 by adpinhei         ###   ########.fr       */
+/*   Updated: 2025/07/03 19:30:45 by adpinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ void	ft_sort(t_list **stack_a)
 	bit = 0;
 	while (pass > 0)
 	{
+		// printf("pass:%i\n", pass);
+
 		ft_isdone(stack_a, stack_b);
 
 		// ft_printlst(stack_a, "stack_a");
@@ -40,10 +42,20 @@ void	ft_sort(t_list **stack_a)
 		// ft_printlst(stack_b, "stack_b");
 		// ft_putstr(1, "***********\n");
 
-		ft_move_b(stack_b, stack_a, bit);
+		if (pass > 1)
+			ft_move_b(stack_b, stack_a, bit);
+		else if (pass == 1)
+			ft_clean_b(stack_b, stack_a);
+
+		// ft_printlst(stack_a, "stack_a");
+		// ft_printlst(stack_b, "stack_b");
+		// ft_putstr(1, "**********\n");
+
 		bit++;
 		pass--;
 	}
+	ft_clearlst(stack_a);
+	ft_clearlst(stack_b);
 }
 
 static int	ft_pass(t_list **lst)

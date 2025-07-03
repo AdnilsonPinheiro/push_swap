@@ -6,7 +6,7 @@
 /*   By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 18:46:56 by adpinhei          #+#    #+#             */
-/*   Updated: 2025/07/01 19:51:36 by adpinhei         ###   ########.fr       */
+/*   Updated: 2025/07/03 18:59:07 by adpinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,21 +29,22 @@ typedef struct s_list
 }	t_list;
 
 /*error function*/
-void	ft_clearlst(t_list **lst);
+void		ft_clearlst(t_list **lst);
+void		ft_error(void);
 
 /*list functions*/
-void	ft_makelst(t_list **lst, int long	value);
-void	ft_firstnode(t_list **lst, int long value);
-int		ft_lstsize(t_list **lst);
+void		ft_makelst(t_list **lst, int long	value);
+void		ft_firstnode(t_list **lst, int long value);
+int			ft_lstsize(t_list **lst);
 
 /*checkers*/
-void	ft_repetition(t_list **lst);
-void	ft_printlst(t_list **lst, char *name);
-void	ft_isdone(t_list **master, t_list **serv);
-int		ft_mid(t_list **lst);
+void		ft_repetition(t_list **lst);
+void		ft_printlst(t_list **lst, char *name);
+void		ft_isdone(t_list **master, t_list **serv);
+int			ft_mid(t_list **lst);
 
 /*parsing functions*/
-void	ft_rank(t_list **lst);
+void		ft_rank(t_list **lst);
 
 int long	ft_atol(char *str);
 
@@ -57,6 +58,6 @@ void		ft_revrot(t_list **stack);
 void		ft_clean_b(t_list **src, t_list **dest);
 
 /*output*/
-void	ft_putstr(int fd, char *str);
+void		ft_putstr(int fd, char *str);
 
 #endif

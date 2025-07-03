@@ -6,7 +6,7 @@
 /*   By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:39:40 by adpinhei          #+#    #+#             */
-/*   Updated: 2025/07/01 17:10:08 by adpinhei         ###   ########.fr       */
+/*   Updated: 2025/07/03 15:19:07 by adpinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int long	ft_atol(char *str)
 	while (str[i])
 	{
 		if (str[i] < '0' || str[i] > '9')
-			exit (0);
+			ft_error();
 		res = res * 10 + (str[i] - '0');
 		i++;
 	}
