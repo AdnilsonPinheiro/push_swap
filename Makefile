@@ -6,7 +6,7 @@
 #    By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/11 17:06:56 by adpinhei          #+#    #+#              #
-#    Updated: 2025/07/07 16:35:44 by adpinhei         ###   ########.fr        #
+#    Updated: 2025/07/07 20:08:54 by adpinhei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,7 @@ $(TARGET): $(OBJ_FILES)
 	@$(CC) $(CFLAGS) -o $@ $^
 	@echo "$(YELLOW)Compiled Program$(RESET) $(TARGET)"
 
-$(BUILD_DIR)/%.o: %.c $(HEADER) | $(BUILD_DIR)
+$(BUILD_DIR)/%.o: %.c $(HEADER)
 	@echo "$(GREEN)Creating directory: $(RESET)$(dir $@)"
 	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) -c $< -o $@
@@ -63,7 +63,7 @@ $(BUILD_DIR)/%.o: %.c $(HEADER) | $(BUILD_DIR)
 valgrind: $(TARGET)
 	@echo "$(YELLOW)Valgrind Report$(RESET)"
 	@valgrind --leak-check=full --show-leak-kinds=all \
-	--track-origins=yes ./$(TARGET) 1 0
+	--track-origins=yes ./$(TARGET) 1 2438 109156 453 13434 0 -4354 -12 -3843843 2135788 -42 3 -5
 
 test: $(TARGET)
 	@if [ -f ./test.sh ]; then \

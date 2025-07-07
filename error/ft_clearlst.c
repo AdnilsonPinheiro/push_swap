@@ -6,7 +6,7 @@
 /*   By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 18:16:27 by adpinhei          #+#    #+#             */
-/*   Updated: 2025/07/03 20:10:32 by adpinhei         ###   ########.fr       */
+/*   Updated: 2025/07/07 19:57:00 by adpinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,17 @@
 
 void	ft_clearlst(t_list **lst)
 {
-	t_list	*node;
-	t_list	*temp;
+	t_list	*current;
+	t_list	*next;
 
-	node = *lst;
-	while (node->next != NULL)
-		node = node->next;
-	while (node != *lst)
+	current = *lst;
+	while (current)
 	{
-		temp = node->prev;
-		temp->next = NULL;
-		node->prev = NULL;
-//		free(node);
-		node = temp;
-//		free (temp);
+		next = current->next;
+		free(current);
+		current = next;
 	}
+	*lst = NULL;
+	free(lst);
+	lst = NULL;
 }

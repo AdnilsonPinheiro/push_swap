@@ -6,7 +6,7 @@
 /*   By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 15:52:45 by adpinhei          #+#    #+#             */
-/*   Updated: 2025/07/07 16:48:11 by adpinhei         ###   ########.fr       */
+/*   Updated: 2025/07/07 19:55:40 by adpinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,20 @@ void	ft_sort(t_list **stack_a, t_list **stack_b)
 				ft_push(stack_a, stack_b);
 			else
 				ft_rot(stack_a);
+		ft_printlst(stack_a, "A");
+		ft_printlst(stack_b, "B");
 			j++;
 		}
 		while (*stack_b)
+		{
 			ft_push(stack_b, stack_a);
+			ft_printlst(stack_a, "A");
+			ft_printlst(stack_b, "B");
+		}
 	}
 	ft_printlst(stack_a, "A");
 	ft_printlst(stack_b, "B");
 	ft_isdone(stack_a, stack_b);
+	ft_clearlst(stack_a);
+	ft_clearlst(stack_b);
 }
