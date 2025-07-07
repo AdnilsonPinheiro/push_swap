@@ -6,7 +6,7 @@
 /*   By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 17:57:52 by adpinhei          #+#    #+#             */
-/*   Updated: 2025/07/05 10:46:45 by adpinhei         ###   ########.fr       */
+/*   Updated: 2025/07/07 16:12:39 by adpinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,11 @@ void	ft_push(t_list **src, t_list **dest)
 		node->next = *dest;
 		(*dest)->prev = node;
 	}
-	else if (!*dest)
+	else
 		node->next = NULL;
 	*dest = node;
+}
+
 
 /*	t_list	*node;
 
@@ -66,5 +68,5 @@ void	ft_push(t_list **src, t_list **dest)
 		*src = NULL;
 	}
 	if (!(*src)->next)
-		*src = NULL;*/
-}
+		*src = NULL;
+}*/

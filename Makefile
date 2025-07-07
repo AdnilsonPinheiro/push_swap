@@ -6,7 +6,7 @@
 #    By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/11 17:06:56 by adpinhei          #+#    #+#              #
-#    Updated: 2025/07/04 18:28:55 by adpinhei         ###   ########.fr        #
+#    Updated: 2025/07/07 16:35:44 by adpinhei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ BUILD_DIR := build
 MAIN_SRCS := main.c
 
 LIST_SRCS := list/ft_makelst.c list/ft_firstnode.c \
-			list/ft_lstsize.c
+			list/ft_lstsize.c list/ft_init.c
 
 PARSING_SRCS := parsing/ft_rank.c parsing/ft_atol.c
 
@@ -78,7 +78,7 @@ norm:
 
 gdb: $(TARGET)
 #	@ARGS="$(shell shuf -i 0-1000 -n 10)"; \#
-	gdb --tui --args ./$(TARGET) 1 2438 109156 453 13434 0 -4354 -12 -3843843 2135788 -42
+	gdb --tui --args ./$(TARGET) 1 2438 109156 453 13434 0 -4354 -12 -3843843 2135788 -42 3 -5
 
 clean:
 	@rm -f $(OBJ_FILES)

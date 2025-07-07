@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdone.c                                        :+:      :+:    :+:   */
+/*   ft_init.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/01 19:32:24 by adpinhei          #+#    #+#             */
-/*   Updated: 2025/07/07 16:41:08 by adpinhei         ###   ########.fr       */
+/*   Created: 2025/07/07 14:48:08 by adpinhei          #+#    #+#             */
+/*   Updated: 2025/07/07 16:43:08 by adpinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_isdone(t_list **master, t_list **serv)
+t_list	**ft_init(t_list **lst)
 {
-	t_list	*current;
-	int		size;
-
-	if (ft_lstsize(serv) > 0)
-		return (0);
-	size = ft_lstsize(master);
-	current = *master;
-	while (size > 0 && current->next)
+	lst = malloc(sizeof(t_list*));
+	if (!lst)
+		return (NULL);
+	*lst = malloc(sizeof(t_list));
+	if(!*lst)
 	{
-		if (current->rank > current->next->rank)
-			return (0);
-		current = current->next;
-		size--;
+		free(lst);
+		return (NULL);
 	}
-	ft_putstr(1, "CONGRATS! STACK IS SORTED!!!\n");
-	return (1);
+	(*lst)->prev = NULL;
+	(*lst)->next = NULL;
+	return (lst);
 }

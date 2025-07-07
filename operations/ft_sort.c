@@ -6,24 +6,19 @@
 /*   By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 15:52:45 by adpinhei          #+#    #+#             */
-/*   Updated: 2025/07/07 14:43:33 by adpinhei         ###   ########.fr       */
+/*   Updated: 2025/07/07 16:40:34 by adpinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_sort(t_list **stack_a)
+void	ft_sort(t_list **stack_a, t_list **stack_b)
 {
-	t_list	**stack_b;
 	int		bits;
 	int		i;
 	int		j;
 	int		max_index;
 
-	stack_b = malloc(sizeof(t_list));
-	if (!stack_b)
-		return ;
-	*stack_b = NULL;
 	bits = 0;
 	max_index = ft_lstsize(stack_a) - 1;
 	while (max_index >> bits)
@@ -48,6 +43,8 @@ void	ft_sort(t_list **stack_a)
 	}
 	ft_printlst(stack_a, "A");
 	ft_printlst(stack_b, "B");
+
+	ft_isdone(stack_a, stack_b);
 	
 	/*bit = 1;
 	ft_printlst(stack_a, "A");
