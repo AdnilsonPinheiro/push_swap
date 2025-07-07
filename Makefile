@@ -6,7 +6,7 @@
 #    By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/11 17:06:56 by adpinhei          #+#    #+#              #
-#    Updated: 2025/07/07 20:08:54 by adpinhei         ###   ########.fr        #
+#    Updated: 2025/07/07 20:18:13 by adpinhei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,7 @@ $(BUILD_DIR)/%.o: %.c $(HEADER)
 valgrind: $(TARGET)
 	@echo "$(YELLOW)Valgrind Report$(RESET)"
 	@valgrind --leak-check=full --show-leak-kinds=all \
-	--track-origins=yes ./$(TARGET) 1 2438 109156 453 13434 0 -4354 -12 -3843843 2135788 -42 3 -5
+	--track-origins=yes ./$(TARGET) $(shuf -i 0-1000 -n 10)
 
 test: $(TARGET)
 	@if [ -f ./test.sh ]; then \

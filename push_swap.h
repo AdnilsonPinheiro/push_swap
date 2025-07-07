@@ -6,7 +6,7 @@
 /*   By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 18:46:56 by adpinhei          #+#    #+#             */
-/*   Updated: 2025/07/07 16:26:37 by adpinhei         ###   ########.fr       */
+/*   Updated: 2025/07/07 20:30:59 by adpinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void		ft_clearlst(t_list **lst);
 void		ft_error(void);
 
 /*list functions*/
-void		ft_makelst(t_list **lst, int long	value);
+void		ft_makelst(t_list **lst, int long value);
 void		ft_firstnode(t_list **lst, int long value);
 int			ft_lstsize(t_list **lst);
 t_list		**ft_init(t_list **lst);
