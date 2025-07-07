@@ -6,7 +6,7 @@
 #    By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/11 17:06:56 by adpinhei          #+#    #+#              #
-#    Updated: 2025/07/03 18:59:45 by adpinhei         ###   ########.fr        #
+#    Updated: 2025/07/04 18:28:55 by adpinhei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,7 @@ $(BUILD_DIR)/%.o: %.c $(HEADER) | $(BUILD_DIR)
 valgrind: $(TARGET)
 	@echo "$(YELLOW)Valgrind Report$(RESET)"
 	@valgrind --leak-check=full --show-leak-kinds=all \
-	--track-origins=yes ./$(TARGET) -48 -12 0 1 5 42 112 -100
+	--track-origins=yes ./$(TARGET) 1 0
 
 test: $(TARGET)
 	@if [ -f ./test.sh ]; then \
@@ -78,7 +78,7 @@ norm:
 
 gdb: $(TARGET)
 #	@ARGS="$(shell shuf -i 0-1000 -n 10)"; \#
-	gdb --tui --args ./$(TARGET) -48 -12 0 1 5 42 112 -100
+	gdb --tui --args ./$(TARGET) 1 2438 109156 453 13434 0 -4354 -12 -3843843 2135788 -42
 
 clean:
 	@rm -f $(OBJ_FILES)

@@ -6,29 +6,28 @@
 /*   By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 19:32:24 by adpinhei          #+#    #+#             */
-/*   Updated: 2025/07/03 19:22:17 by adpinhei         ###   ########.fr       */
+/*   Updated: 2025/07/05 11:47:30 by adpinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_isdone(t_list **master, t_list **serv)
+int	ft_isdone(t_list **master, t_list **serv)
 {
 	t_list	*current;
+	int		size;
 
 	if (ft_lstsize(serv) > 0)
-		return ;
+		return (0);
+	size = ft_lstsize(master);
 	current = *master;
-	while (current->next != NULL)
+	while (size > 0 && current->next)
 	{
-		if (current->num < current->next->num)
-			current = current->next;
-		else
-			return ;
+		if (current->rank > current->next->rank)
+			return (0);
+		current = current->next;
+		size--;
 	}
-	ft_clearlst(serv);
-	ft_putstr(1, "stack_a is ordered!\n");
-	ft_printlst(master, "stack_a");
-	ft_clearlst(master);
-	exit (0);
+	ft_putstr(1, "stack_a is sorted\n");
+	return (1);
 }

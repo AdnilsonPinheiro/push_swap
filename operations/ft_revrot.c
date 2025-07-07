@@ -6,7 +6,7 @@
 /*   By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 19:22:24 by adpinhei          #+#    #+#             */
-/*   Updated: 2025/07/01 21:09:24 by adpinhei         ###   ########.fr       */
+/*   Updated: 2025/07/04 15:39:22 by adpinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ void	ft_revrot(t_list **stack)
 	while (last->next != NULL)
 		last = last->next;
 	last->next = *stack;
+	last->prev->next = NULL;
 	(*stack)->prev = last;
-	last->prev = NULL;
 	*stack = last;
+	(*stack)->prev = NULL;
 }

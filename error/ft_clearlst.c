@@ -6,7 +6,7 @@
 /*   By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 18:16:27 by adpinhei          #+#    #+#             */
-/*   Updated: 2025/07/03 19:24:41 by adpinhei         ###   ########.fr       */
+/*   Updated: 2025/07/03 20:10:32 by adpinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,8 @@ void	ft_clearlst(t_list **lst)
 		temp = node->prev;
 		temp->next = NULL;
 		node->prev = NULL;
+//		free(node);
 		node = temp;
+//		free (temp);
 	}
-	node->prev = NULL;
-	node = NULL;
-	*lst = NULL;
-	lst = NULL;
 }

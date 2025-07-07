@@ -6,7 +6,7 @@
 /*   By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 17:57:52 by adpinhei          #+#    #+#             */
-/*   Updated: 2025/07/03 18:01:04 by adpinhei         ###   ########.fr       */
+/*   Updated: 2025/07/05 10:46:45 by adpinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,29 @@
 
 void	ft_push(t_list **src, t_list **dest)
 {
+
 	t_list	*node;
+
+	if (!src || !*src)
+		return ;
+	node = *src;
+	if ((*src)->next)
+	{
+		*src = (*src)->next;
+		(*src)->prev = NULL;
+	}
+	else if (!(*src)->next)
+		*src = NULL;
+	if (*dest)
+	{
+		node->next = *dest;
+		(*dest)->prev = node;
+	}
+	else if (!*dest)
+		node->next = NULL;
+	*dest = node;
+
+/*	t_list	*node;
 
 	if (!src || !*src)
 		return ;
@@ -23,16 +45,26 @@ void	ft_push(t_list **src, t_list **dest)
 	{
 		*dest = node;
 		*src = (*src)->next;
-		(*dest)->next = NULL;
-		(*dest)->prev = NULL;		
+		(*src)->prev = NULL;
+		(*dest)->next = NULL;		
 	}
 	else
 	{
-		*src = (*src)->next;
+		if ((*src)->next)
+			*src = (*src)->next;
 		(*src)->prev = NULL;
 		node->next = *dest;
 		(*dest)->prev = node;
-		node->prev = NULL;
 		*dest = node;
 	}
+	if ((*src)->prev == NULL && (*src)->next == NULL)
+	{
+		node = *src;
+		node->next = *dest;
+		(*dest)->prev = node;
+		*dest = node;
+		*src = NULL;
+	}
+	if (!(*src)->next)
+		*src = NULL;*/
 }

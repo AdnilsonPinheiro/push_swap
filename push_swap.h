@@ -6,7 +6,7 @@
 /*   By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 18:46:56 by adpinhei          #+#    #+#             */
-/*   Updated: 2025/07/03 18:59:07 by adpinhei         ###   ########.fr       */
+/*   Updated: 2025/07/03 20:04:38 by adpinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int			ft_lstsize(t_list **lst);
 /*checkers*/
 void		ft_repetition(t_list **lst);
 void		ft_printlst(t_list **lst, char *name);
-void		ft_isdone(t_list **master, t_list **serv);
+int			ft_isdone(t_list **master, t_list **serv);
 int			ft_mid(t_list **lst);
 
 /*parsing functions*/

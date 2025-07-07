@@ -6,7 +6,7 @@
 /*   By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 15:40:50 by adpinhei          #+#    #+#             */
-/*   Updated: 2025/07/01 18:06:41 by adpinhei         ###   ########.fr       */
+/*   Updated: 2025/07/04 18:08:36 by adpinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	ft_rank(t_list **lst)
 	{
 		min = ft_nextmin(lst, min);
 		ft_putrank(lst, min, i);
+		//printf("rank %i\n", i);
 		i++;
 	}
 }
@@ -45,8 +46,12 @@ static int long	ft_max(t_list **lst)
 	while (current->next != NULL)
 	{
 		if (current->num > max)
-			max = current->num;
-		current = current->next;
+			{
+				max = current->num;
+				current = *lst;
+			}
+		else
+			current = current->next;
 	}
 	if (current->num > max)
 		max = current->num;
@@ -63,8 +68,12 @@ static int long	ft_min(t_list **lst)
 	while (current->next != NULL)
 	{
 		if (current->num < min)
-			min = current->num;
-		current = current->next;
+			{
+				min = current->num;
+				current = *lst;
+			}
+		else
+			current = current->next;
 	}
 	if (current->num < min)
 		min = current->num;
@@ -88,6 +97,8 @@ static int long	ft_nextmin(t_list **lst, int long nbr)
 		else
 			current = current->next;
 	}
+	if (current->num > nbr && current->num < new)
+		new = current->num;
 	return (new);
 }
 
