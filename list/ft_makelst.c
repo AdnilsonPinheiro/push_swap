@@ -6,7 +6,7 @@
 /*   By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 15:03:19 by adpinhei          #+#    #+#             */
-/*   Updated: 2025/07/07 20:08:27 by adpinhei         ###   ########.fr       */
+/*   Updated: 2025/07/08 15:28:27 by adpinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_makelst(t_list **lst, int long value)
 
 	new = malloc(sizeof(t_list));
 	if (!new)
-		return ;
+		return (ft_cleanlst(lst)) ;
 	new->num = value;
 	new->rank = -1;
 	new->prev = NULL;

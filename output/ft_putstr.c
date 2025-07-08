@@ -6,7 +6,7 @@
 /*   By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 16:25:44 by adpinhei          #+#    #+#             */
-/*   Updated: 2025/07/01 17:37:20 by adpinhei         ###   ########.fr       */
+/*   Updated: 2025/07/08 14:49:25 by adpinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ void	ft_putstr(int fd, char *str)
 	i = 0;
 	while (str[i])
 		write(fd, &str[i++], 1);
-	write(fd, " ", 1);
+	write(fd, "\n", 1);
 }

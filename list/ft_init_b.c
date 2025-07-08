@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mid.c                                           :+:      :+:    :+:   */
+/*   ft_init_b.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/01 19:49:50 by adpinhei          #+#    #+#             */
-/*   Updated: 2025/07/08 17:34:25 by adpinhei         ###   ########.fr       */
+/*   Created: 2025/07/08 14:28:06 by adpinhei          #+#    #+#             */
+/*   Updated: 2025/07/08 14:37:52 by adpinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_mid(t_list **lst)
+t_list	**ft_init_b(t_list **lst)
 {
-	if (ft_lstsize(lst) % 2 == 0)
-		return (ft_lstsize(lst) / 2);
-	else
-		return ((ft_lstsize(lst) + 1) / 2);
+	lst = malloc(sizeof(t_list *));
+	if (!lst)
+		return (NULL);
+	*lst = NULL;
+	return (lst);
 }

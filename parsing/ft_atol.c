@@ -6,7 +6,7 @@
 /*   By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:39:40 by adpinhei          #+#    #+#             */
-/*   Updated: 2025/07/07 20:21:57 by adpinhei         ###   ########.fr       */
+/*   Updated: 2025/07/08 15:00:07 by adpinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ int long	ft_atol(char *str)
 		i++;
 	}
 	if (res * sign < INT_MIN || res * sign > INT_MAX)
-		exit (0);
+		ft_error();
 	return (res * sign);
 }

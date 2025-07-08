@@ -6,13 +6,13 @@
 /*   By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 16:18:31 by adpinhei          #+#    #+#             */
-/*   Updated: 2025/07/03 20:19:22 by adpinhei         ###   ########.fr       */
+/*   Updated: 2025/07/08 15:31:31 by adpinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_repetition(t_list **lst)
+int	ft_repetition(t_list **lst)
 {
 	t_list		*first;
 	t_list		*second;
@@ -28,10 +28,11 @@ void	ft_repetition(t_list **lst)
 		while (second)
 		{
 			if (second->num == i)
-				ft_error();
+				return (1);
 			second = second->next;
 		}
 		first = first->next;
 		counter++;
 	}
+	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/11 17:06:56 by adpinhei          #+#    #+#              #
-#    Updated: 2025/07/07 20:18:13 by adpinhei         ###   ########.fr        #
+#    Updated: 2025/07/08 17:33:41 by adpinhei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,14 +22,15 @@ BUILD_DIR := build
 MAIN_SRCS := main.c
 
 LIST_SRCS := list/ft_makelst.c list/ft_firstnode.c \
-			list/ft_lstsize.c list/ft_init.c
+			list/ft_lstsize.c list/ft_init.c \
+			list/ft_init_b.c
 
 PARSING_SRCS := parsing/ft_rank.c parsing/ft_atol.c
 
 CHECKER_SRCS := checkers/ft_repetition.c checkers/ft_printlst.c \
 				checkers/ft_isdone.c checkers/ft_mid.c
 
-ERROR_SRCS := error/ft_clearlst.c error/ft_error.c
+ERROR_SRCS := error/ft_cleanlst.c error/ft_error.c
 
 OPERATIONS_SRCS := operations/ft_sort.c operations/ft_move_a.c \
 				operations/ft_rot.c operations/ft_revrot.c \
@@ -63,7 +64,8 @@ $(BUILD_DIR)/%.o: %.c $(HEADER)
 valgrind: $(TARGET)
 	@echo "$(YELLOW)Valgrind Report$(RESET)"
 	@valgrind --leak-check=full --show-leak-kinds=all \
-	--track-origins=yes ./$(TARGET) $(shuf -i 0-1000 -n 10)
+	--track-origins=yes ./$(TARGET) 1 2 3 4
+#$$(shuf -i 0-1000 -n 100)
 
 test: $(TARGET)
 	@if [ -f ./test.sh ]; then \
@@ -78,7 +80,7 @@ norm:
 
 gdb: $(TARGET)
 #	@ARGS="$(shell shuf -i 0-1000 -n 10)"; \#
-	gdb --tui --args ./$(TARGET) 1 2438 109156 453 13434 0 -4354 -12 -3843843 2135788 -42 3 -5
+	gdb --tui --args ./$(TARGET) 1 2 3 1
 
 clean:
 	@rm -f $(OBJ_FILES)

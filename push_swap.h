@@ -6,7 +6,7 @@
 /*   By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 18:46:56 by adpinhei          #+#    #+#             */
-/*   Updated: 2025/07/07 20:30:59 by adpinhei         ###   ########.fr       */
+/*   Updated: 2025/07/08 17:28:55 by adpinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_list
 }	t_list;
 
 /*error function*/
-void		ft_clearlst(t_list **lst);
+void		ft_cleanlst(t_list **lst);
 void		ft_error(void);
 
 /*list functions*/
@@ -37,11 +37,12 @@ void		ft_makelst(t_list **lst, int long value);
 void		ft_firstnode(t_list **lst, int long value);
 int			ft_lstsize(t_list **lst);
 t_list		**ft_init(t_list **lst);
+t_list		**ft_init_b(t_list **lst);
 
 /*checkers*/
-void		ft_repetition(t_list **lst);
+int			ft_repetition(t_list **lst);
 void		ft_printlst(t_list **lst, char *name);
-int			ft_isdone(t_list **master, t_list **serv);
+void		ft_isdone(t_list **lst, t_list **b);
 int			ft_mid(t_list **lst);
 
 /*parsing functions*/
