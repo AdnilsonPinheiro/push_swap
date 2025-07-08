@@ -6,7 +6,7 @@
 #    By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/11 17:06:56 by adpinhei          #+#    #+#              #
-#    Updated: 2025/07/08 17:33:41 by adpinhei         ###   ########.fr        #
+#    Updated: 2025/07/08 17:49:40 by adpinhei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,21 +21,18 @@ BUILD_DIR := build
 # Source Groups
 MAIN_SRCS := main.c
 
-LIST_SRCS := list/ft_makelst.c list/ft_firstnode.c \
-			list/ft_lstsize.c list/ft_init.c \
-			list/ft_init_b.c
+LIST_SRCS := list/ft_makelst.c  list/ft_lstsize.c \
+			 list/ft_init.c
 
 PARSING_SRCS := parsing/ft_rank.c parsing/ft_atol.c
 
 CHECKER_SRCS := checkers/ft_repetition.c checkers/ft_printlst.c \
-				checkers/ft_isdone.c checkers/ft_mid.c
+				checkers/ft_isdone.c
 
 ERROR_SRCS := error/ft_cleanlst.c error/ft_error.c
 
-OPERATIONS_SRCS := operations/ft_sort.c operations/ft_move_a.c \
-				operations/ft_rot.c operations/ft_revrot.c \
-				operations/ft_push.c operations/ft_move_b.c \
-				operations/ft_clean_b.c
+OPERATIONS_SRCS := operations/ft_sort.c  operations/ft_rot.c \
+				operations/ft_push.c
 
 OUTPUT_SRCS := output/ft_putstr.c
 
@@ -64,8 +61,7 @@ $(BUILD_DIR)/%.o: %.c $(HEADER)
 valgrind: $(TARGET)
 	@echo "$(YELLOW)Valgrind Report$(RESET)"
 	@valgrind --leak-check=full --show-leak-kinds=all \
-	--track-origins=yes ./$(TARGET) 1 2 3 4
-#$$(shuf -i 0-1000 -n 100)
+	--track-origins=yes ./$(TARGET) $$(shuf -i 0-1000 -n 100)
 
 test: $(TARGET)
 	@if [ -f ./test.sh ]; then \
@@ -79,8 +75,8 @@ norm:
 	@norminette -R CheckForbiddenSourceHeader
 
 gdb: $(TARGET)
-#	@ARGS="$(shell shuf -i 0-1000 -n 10)"; \#
-	gdb --tui --args ./$(TARGET) 1 2 3 1
+	@ARGS="$(shell shuf -i 0-1000 -n 10)"; \
+	gdb --tui --args ./$(TARGET) $$ARGS
 
 clean:
 	@rm -f $(OBJ_FILES)

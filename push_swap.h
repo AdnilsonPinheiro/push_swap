@@ -6,7 +6,7 @@
 /*   By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 18:46:56 by adpinhei          #+#    #+#             */
-/*   Updated: 2025/07/08 17:28:55 by adpinhei         ###   ########.fr       */
+/*   Updated: 2025/07/08 17:42:05 by adpinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,30 +34,22 @@ void		ft_error(void);
 
 /*list functions*/
 void		ft_makelst(t_list **lst, int long value);
-void		ft_firstnode(t_list **lst, int long value);
 int			ft_lstsize(t_list **lst);
 t_list		**ft_init(t_list **lst);
-t_list		**ft_init_b(t_list **lst);
 
 /*checkers*/
 int			ft_repetition(t_list **lst);
 void		ft_printlst(t_list **lst, char *name);
 void		ft_isdone(t_list **lst, t_list **b);
-int			ft_mid(t_list **lst);
 
 /*parsing functions*/
 void		ft_rank(t_list **lst);
-
 int long	ft_atol(char *str);
 
 /*operations functions*/
 void		ft_sort(t_list **stack_a, t_list **stack_b);
-void		ft_move_a(t_list **src, t_list **dest, int bit);
-void		ft_move_b(t_list **src, t_list **dest, int bit);
 void		ft_push(t_list **src, t_list **dest);
 void		ft_rot(t_list **stack);
-void		ft_revrot(t_list **stack);
-void		ft_clean_b(t_list **src, t_list **dest);
 
 /*output*/
 void		ft_putstr(int fd, char *str);
