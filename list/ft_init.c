@@ -6,7 +6,7 @@
 /*   By: adpinhei <adpinhei@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 14:48:08 by adpinhei          #+#    #+#             */
-/*   Updated: 2025/07/08 14:26:34 by adpinhei         ###   ########.fr       */
+/*   Updated: 2025/07/08 17:52:08 by adpinhei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 t_list	**ft_init(t_list **lst)
 {
-	lst = malloc(sizeof(t_list*));
+	lst = malloc(sizeof(t_list *));
 	if (!lst)
 		return (NULL);
 	*lst = malloc(sizeof(t_list));
-	if(!*lst)
+	if (!*lst)
 	{
 		free(lst);
 		return (NULL);
